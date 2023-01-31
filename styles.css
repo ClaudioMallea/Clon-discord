@@ -7,30 +7,65 @@
 body{
     white-space: nowrap;
     font-size: 0px; 
-    background-color:blue;
+    background-color:black;
     width:100vw;
     height: 100vh;
 }
 
+.findConversation{
+    font-size:14px;
+    font-weight: 500;
+    padding: 1px 4px;
+    border:0px;
+    border-radius:4px;
+    background:#202225;
+    width:220px;
+    height: 28px;
+    color: #A3A6AA;
+    text-align: left;
+    line-height: 24px;
+    cursor:pointer;
+}
 
 .sideNav{
     display:inline-block;
     background: #202225;
     position:relative;
-    width:70px;
+    width:72px;
     height: 100%;
     
+}
+.groupButton{
+
+    width:72px;
+    height:48px;
+    margin-bottom:8px;
+}
+.groupButton:nth-child(1){
+    margin-top:8px;
+}
+.groupButton:nth-child(2){
+    border-top:1px solid gray;
+}
+.circle{
+    width:30px;
+    height:30px;
+    border-radius:180px;
+    background:black;
 }
 .personSelector{
     background: #2F3136;
     display:inline-block;
     position:relative;
-    width:242px;
+    width:240px;
     height: 100%;
     top:0;
     
 } 
 .personSelector nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     position:absolute;
     border-bottom: 1px solid black;
     width: 100%;
@@ -76,7 +111,7 @@ body{
 .mainSection aside{
     position:fixed;
     right:0;
-    width:350px;
+    width:340px;
     height: 100%;
     background:#1e2124;
     z-index:0;
