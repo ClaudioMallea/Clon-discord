@@ -5,6 +5,7 @@
     font-family: sans-serif, Arial;
 }
 
+
 body{
     display:flex;
     white-space: nowrap;
@@ -62,10 +63,9 @@ body{
 }
 .personSelector{
     
-    overflow:hidden;
     background: #2F3136;
-    display:inline-block;
-    position:relative;
+    display:flex;
+    flex-direction: column;
     width:240px;
     height: 100%;
     top:0;
@@ -75,10 +75,9 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    position:absolute;
     border-bottom: 1px solid black;
     width: 100%;
-    height:50px;
+    height:54px;
     z-index:1;
 }
 
@@ -148,37 +147,99 @@ body{
 .personSelector section{
     
     display:flex;
-    justify-content: center;
+    overflow-y: scroll;
+    scrollbar-color: #202225 #2F3136;
     align-items: center;
     flex-direction: column;
+    height:calc(100% - 50px);
+}
+.personSelector section i{
+    
+    font-size: 25px;
+
 }
 
-.personSelector section div{
+.personSelector section > div{
     display:flex;
     align-items:center;
     font-size:15px;
     font-weight: bold;
-    position:relative;
-    top:50px;
     width:90%;
     height:40px;
-    margin-top:10px;
-    margin-bottom:10px;
+    min-height: 40px;
+    margin-top:1px;
+    margin-bottom:1px;
     border-radius:3px;
     z-index:100;
     color: #ADAFB1;
     padding-left:10px;
 }
+.personSelector section div:nth-child(1){
+    margin-top:11px;
+}
+.personSelector section .DirectMessages{
+    font-size:11px;
+    margin-top:7px;
+    position:relative;
+}
+.personSelector section .DirectMessages:hover{
+    background:none;
+    color:white;
+}
+.personSelector section .DirectMessages i{
+    position: absolute;
+    right: 10px;
+    color:#696B6E;
+}
+.personSelector section .friend{
+    display: flex;
+    align-items: center;
+    position:relative;
+}
+.personSelector section .friend i{
+    display:none;
+
+}
+.personSelector section .friend:hover i:hover{
+    color: #ADAFB1;
+    
+}
+.personSelector section .friend:hover i{
+    display: inline;
+    position: absolute;
+    right: 10px;
+    color:#696B6E;
+
+}
+
+.friend .avatar{
+    overflow: hidden;
+    position: relative;
+    width:30px;
+    height:30px;
+    bottom:7px;
+    right:5px;
+    margin-right: 4px;
+    border-radius:180px;
+    background:white;
+    box-sizing: border-box;
+}
+.friend .avatar img{
+    height: 100%;
+    width:100%;
+    box-sizing: border-box;
+}
+
+/* .personSelector section .friend i:hover{
+    display:none;
+} */
 .personSelector section div p{
     position:relative;
     left:10px;
 }
 
-.personSelector section div:hover{
+.personSelector section > div:hover{
     background: #424549;
-    
-    
-    
 }
 
 
@@ -192,16 +253,31 @@ body{
     background: #292B2F;
     height:55px;
     width:100%;
-    position:absolute;
     bottom:0px;
     z-index:100;
 }
 .personSelector footer .profile{
-    margin-left:10px;
+    display:flex;
+    align-items: center;
+    margin-left:8px;
     width:120px ;
     height: 39px;
     border-radius:4px;
+    font-size:13px;
 }
+.personSelector footer .profile .usernameCodes{
+    margin-left:10px;
+}
+.personSelector footer .profile .usernameCodes p:nth-child(1){
+    color:white;
+    font-weight: bold;
+}
+.personSelector footer .profile .usernameCodes p:nth-child(2){
+    color:#D4D5D6;
+    margin-top:2px;
+    font-size:11px;
+}
+
 .personSelector footer .profile:hover{
 
     background:  #424549;
@@ -233,6 +309,16 @@ body{
     border-radius:4px;
 }
 
+.profile .avatar{
+    width:32px;
+    height:32px;
+    border-radius:180px;
+    background:white;
+}
+
+.active-inline{
+    display:"inline";
+}
 
 @media(max-width: 1000px){
     .mainSection aside{
