@@ -41,6 +41,16 @@ body{
     
     
 }
+.sideNav .groupButton .circle{
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+.sideNav .groupButton .circle img{
+    width: 100%;
+    height: 100%;
+}
+
 .groupButton{
     display:flex;
     justify-content: center;
@@ -59,7 +69,11 @@ body{
     width:48px;
     height:48px;
     border-radius:180px;
+    transition: border-radius 250ms ease-in-out ; 
     background:black;
+}
+.circle:hover{
+    border-radius:12px;
 }
 .personSelector{
     
@@ -318,6 +332,10 @@ body{
 
 .active-inline{
     display:"inline";
+}
+
+.pointer{
+    cursor:pointer;
 }
 
 @media(max-width: 1000px){
