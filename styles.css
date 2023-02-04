@@ -132,6 +132,9 @@ body{
 
 .mainSection nav{
     
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
     position:relative;
     border-bottom: 1px solid black;
     width: 100%;
@@ -139,6 +142,61 @@ body{
     background:#36393e;
     z-index:1;
 }
+.mainSection nav .nav-title{
+
+    margin-left:20px;
+    display: flex;
+    align-items: center;
+    font-size:12px;
+    color:#FFFFFF;
+    height: 100%;
+    width:100px;
+    font-size:18px;
+
+    
+}
+.mainSection nav .nav-title p:nth-child(1){
+    font-size:20px;
+    color:#8E9297;
+    margin-right: 3px;
+    
+}
+.mainSection nav .nav-buttons{
+    margin-left:20px;
+    display: flex;
+    align-items: center;
+    font-size:12px;
+    color:#FFFFFF;
+    height: 100%;
+    font-size:18px;
+
+    
+}
+
+.mainSection nav .nav-buttons input{
+    display:block;
+    width:120px;
+    height:24px;
+    background:#202225;
+    border:0;
+    border-radius:3px;
+    outline:0;
+    color:#A3A6AA;
+    position:relative;
+}
+.mainSection nav .nav-buttons input::placeholder{
+
+    color:#A3A6AA;
+    
+}
+.mainSection nav .nav-buttons i{
+    display:block;
+    font-size:25px;
+    margin:0px 12px;
+    cursor:pointer;
+}
+
+
 
 .mainSection section{
     
@@ -161,6 +219,7 @@ body{
 }
 .chat .linesGroup {
     font-size:16px;
+    margin-bottom:10px;
 }
 
 .chat .linesGroup .firstline{
@@ -169,6 +228,9 @@ body{
 
 }
 .chat .linesGroup .firstline:hover{
+    background:#32353B;
+}
+.chat .linesGroup .line:hover{
     background:#32353B;
 }
 .chat .linesGroup .firstline .circleLinesGroup{
@@ -183,6 +245,52 @@ body{
     overflow:hidden;
 
 }
+.chat .linesGroup .firstline .circleLinesGroup + .msg p:nth-child(1){
+    color:#FFFFFF;
+}
+.chat .linesGroup .firstline .circleLinesGroup + .msg p:nth-child(1) > span{
+    color:#ADAFB1;
+    font-size:13px;
+}
+.chat .linesGroup .firstline .circleLinesGroup + .msg p:nth-child(2){
+    margin-top:4px;
+    color:#DCDDDE;
+    font-size:16px;
+    margin-bottom: 4px;
+}
+.chat .linesGroup .line .msg p{
+    margin-top:4px;
+    color:#DCDDDE;
+    font-size:16px;
+    margin-bottom: 4px;
+}
+.chat .linesGroup .line .time{ 
+    overflow:hidden;
+    font-size:11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#878A8E;
+    margin:0 6px;
+    width:44px;
+}
+.chat .linesGroup .line .time p{ 
+    display:none;
+}
+.chat .linesGroup .line:hover .time p{ 
+    display:block;
+}
+
+
+
+
+.chat .linesGroup .line {
+
+    display: flex;
+    
+
+}
+
 .chat .linesGroup .firstline .circleLinesGroup img{
 
     width:100%;
@@ -209,15 +317,137 @@ body{
 }
 
 .mainSection aside{
-    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     position:fixed;
     top:50px;
     right:0;
     width:340px;
     height: 100%;
-    background:#1e2124;
+    background:#292B2F;
     z-index:10;
 }
+.mainSection aside .banner{
+    
+    background: #937D66;
+    width:100%;
+    height: 120px;
+    
+}
+.mainSection aside .imageContainer{
+    position:absolute;
+    overflow:hidden;
+    border-radius:180px;
+    border:6px solid #1E2124;
+    top:68px;
+    left:12px;
+    background: red;
+    width:90px;
+    height:90px;
+    box-sizing: border-box;
+    
+}
+.mainSection aside .imageContainer img{
+    width:100%;
+    height: 100%;
+    
+}
+.mainSection aside .details{
+
+    margin-top:60px;
+    padding-left:10px;
+    width:90%;
+    height: 190px;
+    background:#18191C;
+    border-radius:8px;
+}
+.mainSection aside .details .username{
+    margin-top:5px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 95%;
+    border-bottom: 1px solid #424549;
+    
+}
+.mainSection aside .details .username p{
+    color: white;
+    font-size:20px;
+    font-weight: bold;
+}
+.mainSection aside .details .username p span{
+    color: #B9BBBE;
+}
+.mainSection aside .memberSince{
+    border-bottom:1px solid #424549;
+    width: 95%;
+    
+}
+.mainSection aside .memberSince p:nth-child(1){
+    margin:15px 0;
+    color: white;
+    font-weight: bold;
+    font-size:11px;
+}
+.mainSection aside .memberSince p:nth-child(2){
+    color: #B9BBBE;
+    font-size:14px;
+    margin-bottom:10px;
+}
+.mainSection aside .note{
+    
+    width: 95%;
+}
+.mainSection aside .note p:nth-child(1){
+    margin:15px 0;
+    color: white;
+    font-weight: bold;
+    font-size:11px;
+}
+.mainSection aside .note p:nth-child(2){
+    color: #B9BBBE;
+    font-size:14px;
+    margin-bottom:10px;
+}
+.mainSection aside .socialRelations {
+    display:flex;
+
+    width: 95%;
+    justify-content: space-around;
+    flex-direction:column;
+    color: #B9BBBE;
+    font-size:14px;
+    margin-bottom:10px;
+}
+.mainSection aside .socialRelations div{
+    
+    height: 160px;
+}
+.mainSection aside .socialRelations div:nth-child(1){
+    display:flex;
+    justify-content: space-around;
+    flex-direction:column;
+    color: #B9BBBE;
+    font-size:14px;
+    margin-bottom:20px;
+    width: 95%;
+    border-bottom:1px solid #424549;
+}
+
+
+
+
+.mainSection aside .socialRelations{
+    margin-top:20px;
+    padding-left:10px;
+    width:90%;
+    height: 94px;
+    background:#18191C;
+    border-radius:8px;
+}
+
+
 
 .personSelector section{
     
