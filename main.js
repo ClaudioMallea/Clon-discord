@@ -15,7 +15,6 @@ if(!localStorage.getItem('msgs')){
 else{
     let msgsArray = JSON.parse(localStorage.getItem('msgs'));
     msgsArray.forEach(element => {
-        console.log(element);
         writeFirstLine(element);
     });
 
@@ -26,7 +25,6 @@ function onInputEnter(e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
         if(e.target.value !== ""){
             let msg =  cmallea.escribirMensaje(e.target.value)
-            console.log(msg);
             pushNewMessage(msg);
         }
 
@@ -39,15 +37,10 @@ function pushNewMessage(mensaje){
     let mensajes = JSON.parse(localStorage.getItem('msgs'));
     if(mensajes.length>0){
         let mensaje_anterior = mensajes[mensajes.length-1];
-        console.log("1111");
         const same_user = mensaje_anterior.user.name == mensaje.user.name;
         const lesser_than_one_minute = moment.duration(moment(mensaje.datetime).diff(moment(mensaje_anterior.datetime))).seconds() < 10;
 
-        console.log(same_user);
-        console.log(moment.duration(moment(mensaje.datetime).diff(moment(mensaje_anterior.datetime))).seconds());
-        console.log(lesser_than_one_minute);
         if (same_user && lesser_than_one_minute){
-            console.log("estoy acaaaa");
             writeLine(mensaje);
             mensajes.push(mensaje);
             localStorage.setItem('msgs', JSON.stringify(mensajes));
@@ -83,7 +76,6 @@ function writeFirstLine(mensaje){
     const first_p= document.createElement("p");
     first_p.innerText=cmallea.name;
     const first_p_span= document.createElement("span");
-    console.log(mensaje.datetime);
     first_p_span.innerText=" " + moment(mensaje.datetime).format('DD/MM/YYYY') + " " +moment(mensaje.datetime).format('h:mm A');
     
     const second_p= document.createElement("p");
@@ -102,8 +94,6 @@ function writeFirstLine(mensaje){
 }
 
 function writeLine(mensaje){
-    console.log(chat);
-    console.log(chat.lastChild);
     const lastLineGroup = chat.lastChild;
 
     const line = document.createElement("div");
