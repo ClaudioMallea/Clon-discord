@@ -1,29 +1,33 @@
 
-var moment = require('moment');
 
-class User{
-    constructor(name, avatar){
-        this.name = name;
-        this.avatar = avatar;
-    }
-    escribirMensaje(user, message){
-        const moment = require('moment');
-        const date = moment().format('DD/MM/YYYY');
-        const time = moment().format('hh:mm A');
 
-        const msg = new Message(user, date , time , message);
-        return msg
-    }
-
-}
-
-class Message{
-    constructor(user, date, time, message){
+export class Message{
+    constructor(user, date, message){
         this.user = user;
-        this.date = date;
-        this.time = time;
+        this.datetime = date;
         this.message = message;
     }
 
 
 }
+export class User{
+    constructor(name, avatar){
+        this.name = name;
+        this.avatar = avatar;
+    }
+    escribirMensaje( message){
+        const date = new Date(Date.now());
+        const datetime= date.toISOString();
+
+
+        const msg = new Message(this, datetime , message);
+        return msg
+    }
+
+}
+
+
+
+const user  = new User("asd","asd").escribirMensaje("hello" );
+console.log(user);
+
